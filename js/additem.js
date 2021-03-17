@@ -1,11 +1,14 @@
 let additemWindow=document.querySelector('.modal-add-item-wrapper');
-let windowOpenButton=document.querySelectorAll('.buy-button');
+let  windowOpenButton=document.querySelectorAll('.buy-button');
 let buttonClose=document.querySelector('.close-link');
 
-windowOpenButton.addEventListener('click', function (evt) {
-  evt.preventDefault();
+let modalOpen=function () {
   additemWindow.classList.add('modal-add-item-wrapper-open');
-});
+}
+
+for (let item of  windowOpenButton) {
+  item.addEventListener('click',modalOpen);
+}
 
 buttonClose.addEventListener('click', function () {
   additemWindow.classList.remove('modal-add-item-wrapper-open');
